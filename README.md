@@ -718,7 +718,11 @@ Head to AWS Console to create a Kubernetes cluster search for EKS
 
 Click on the link below below to create a Kubernetes cluster and reference the images as a guide.
 
+https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html
+
 https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html
+
+https://docs.aws.amazon.com/eks/latest/userguide/create-managed-node-group.html
 
 <div align="center">
   <img src="./public/assets/Creating EKS.png" alt="Logo" width="50%" height="50%">
@@ -736,6 +740,37 @@ Also you will need to create a IAM Role
   <img src="./public/assets/EKS IAM Role1.png" alt="Logo" width="50%" height="50%">
   <p align="center">EKS IAM Role</p>
 </div>
+
+    - Click Review and Create and go back to the EKS Create page to continue.
+    - Select the created IAM Role
+
+    - For the other steps follow the images below to create a EKS Cluster.
+
+<div align="center">
+  <img src="./public/assets/EKS2.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Specify Networking</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/EKS3.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Specify Networking</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/EKS6.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Configure observability</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/EKS4.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Select add ons</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/EKS5.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Configure Selected add ons setting</p>
+</div>
+
 
 ## Monitor Kubernetes with Prometheus
 
