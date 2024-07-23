@@ -677,8 +677,8 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
     - Set up email notifications in Jenkins or other notification mechanisms.
   
 <div align="center">
-  <img src="./public/assets/home-page.png" alt="Logo" width="50%" height="50%">
-  <p align="center">Home Page</p>
+  <img src="./public/assets/Google App Password.png" alt="Logo" width="50%" height="50%">
+  <p align="center">App Password Generation</p>
 </div>
 
 # Phase 6: Kubernetes
