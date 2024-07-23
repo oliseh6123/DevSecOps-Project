@@ -721,7 +721,7 @@ Click on the link below below to create a Kubernetes cluster and reference the i
 https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html
 
 <div align="center">
-  <img src="./public/assets/Creating EKS" alt="Logo" width="50%" height="50%">
+  <img src="./public/assets/Creating EKS.png" alt="Logo" width="50%" height="50%">
   <p align="center">Create EKS</p>
 </div>
 
