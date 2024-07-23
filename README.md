@@ -675,6 +675,11 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
 
 1. **Implement Notification Services:**
     - Set up email notifications in Jenkins or other notification mechanisms.
+  
+<div align="center">
+  <img src="./public/assets/home-page.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Home Page</p>
+</div>
 
 # Phase 6: Kubernetes
 
