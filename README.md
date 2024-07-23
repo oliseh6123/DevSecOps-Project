@@ -714,6 +714,29 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
 
 In this phase, you'll set up a Kubernetes cluster with node groups. This will provide a scalable environment to deploy and manage your applications.
 
+Head to AWS Console to create a Kubernetes cluster search for EKS
+
+Click on the link below below to create a Kubernetes cluster and reference the images as a guide.
+
+https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html
+
+<div align="center">
+  <img src="./public/assets/Creating EKS" alt="Logo" width="50%" height="50%">
+  <p align="center">Create EKS</p>
+</div>
+
+Also you will need to create a IAM Role
+
+<div align="center">
+  <img src="./public/assets/EKS IAM Role.png" alt="Logo" width="50%" height="50%">
+  <p align="center">EKS IAM Role</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/EKS IAM Role1.png" alt="Logo" width="50%" height="50%">
+  <p align="center">EKS IAM Role</p>
+</div>
+
 ## Monitor Kubernetes with Prometheus
 
 Prometheus is a powerful monitoring and alerting toolkit, and you'll use it to monitor your Kubernetes cluster. Additionally, you'll install the node exporter using Helm to collect metrics from your cluster nodes.
