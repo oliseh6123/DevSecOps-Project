@@ -771,6 +771,60 @@ Also you will need to create a IAM Role
   <p align="center">Configure Selected add ons setting</p>
 </div>
 
+## Configuring Your AWS cli to acces the EKS via local machine terminal
+This is an addition to the project, I had some issue connecting directly from my local machine because the IAM user that is configured on my local machine (Mac) was not permitted to access EKS Cluster, so to change this, head to cloudshell at the top right of your AWS console screen.
+
+    - enter the following commands below
+
+    kubectl -n kube-system edit configmap aws-auth
+
+    - Add to the configuration below to yaml file after the mapGroups: Tag
+
+   "mapUsers: |
+    - userarn: arn:aws:iam::xxxxxxxxxx654:user/IAM User Name
+      username: IAM User Name
+      groups:
+          - system:masters"
+
+    _ Remember to get userarn and username if you have configured aws cli on your local machine perviously and place it inside the configuration were needed
+
+    It takes a while before the EKS cluster becomes active, but once it is, we move on to creating a Node Group. Scroll down the page of your EKS Table, the third table is where you can create node. follow the instructions in the link below.
+
+https://docs.aws.amazon.com/eks/latest/userguide/create-managed-node-group.html
+
+    You well also need to create a node role.
+
+    Here are some images to help
+
+<div align="center">
+  <img src="./public/assets/Node Group.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Set compute and scaling configurations</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/Node Group 2.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Node Configuration</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/Node Role.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Node Role</p>
+</div>
+
+Now we need to configure some ports, so in you eks cluster find the EC2 instance click on it to enter from their if you know your way the normal EC2 instance you should be able to go about the ports 30007 (to display the Netflix App from the cluster)
+
+Here are some images to help.
+
+<div align="center">
+  <img src="./public/assets/EKS Internal EC2 IP.png" alt="Logo" width="50%" height="50%">
+  <p align="center">EKS InterNal EC2 IP</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/APP Port SG.png" alt="Logo" width="50%" height="50%">
+  <p align="center">APP Port</p>
+</div>
+
 
 ## Monitor Kubernetes with Prometheus
 
