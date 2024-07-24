@@ -925,12 +925,12 @@ jq tag was not found on my machine but i resolved that by installing it with hom
    - `syncPolicy`: Configure the sync policy, including automatic syncing, pruning, and self-healing.
 
 <div align="center">
-  <img src="./public/assets/Netflix app on argocd.png" alt="Logo" width="50%" height="50%">
+  <img src="./public/assets/Netflix app on Argocd.png" alt="Logo" width="50%" height="50%">
   <p align="center">Argocd Display</p>
 </div>
 
 <div align="center">
-  <img src="./public/assets/App flow on Argocd.png" alt="Logo" width="50%" height="50%">
+  <img src="./public/assets/App Flow on Argocd.png" alt="Logo" width="50%" height="50%">
   <p align="center">Netflix App on Argocd </p>
 </div>
 
