@@ -852,6 +852,7 @@ To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node 
     helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace prometheus-node-exporter
     ```
 
+
 Add a Job to Scrape Metrics on nodeip:9001/metrics in prometheus.yml:
 
 Update your Prometheus configuration (prometheus.yml) to add a new job for scraping metrics from nodeip:9001/metrics. You can do this by adding the following configuration to your prometheus.yml file:
@@ -863,6 +864,32 @@ Update your Prometheus configuration (prometheus.yml) to add a new job for scrap
     static_configs:
       - targets: ['node1Ip:9100']
 ```
+
+note we are going to be adding jobs for Jenkins, K8s and Agrocd usually following the same pattern
+
+```
+  - job_name: 'jenkins'
+    metrics_path: '/prometheus'
+    static_configs:
+      - targets: ['<jenkins ip: port number>']
+```
+
+<div align="center">
+  <img src="./public/assets/Metrics on Prometheus.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Metrics on Prometheus</p>
+</div>
+
+Create a grafana dashboard for each metric you want to show
+
+<div align="center">
+  <img src="./public/assets/grafana dashboard.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Grafana Dashboard</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/grafana dashboard1.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Grafana Dasboard 2</p>
+</div>
 
 Replace 'your-job-name' with a descriptive name for your job. The static_configs section specifies the targets to scrape metrics from, and in this case, it's set to nodeip:9001.
 
@@ -876,6 +903,16 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
    You can install ArgoCD on your Kubernetes cluster by following the instructions provided in the [EKS Workshop](https://archive.eksworkshop.com/intermediate/290_argocd/install/) documentation.
 
+   Know during the installation of ArgoCD, I ran into a little snag when running this script
+   '''export ARGOCD_SERVER=`kubectl get svc argocd-server -n argocd -o json | jq --raw-output '.status.loadBalancer.ingress[0].hostname'`
+'''
+
+brew install jq
+ 
+and retried the script which worked fine now.
+
+jq tag was not found on my machine but i resolved that by installing it with homebrew
+
 2. **Set Your GitHub Repository as a Source:**
 
    After installing ArgoCD, you need to set up your GitHub repository as a source for your application deployment. This typically involves configuring the connection to your repository and defining the source for your ArgoCD application. The specific steps will depend on your setup and requirements.
@@ -887,8 +924,23 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
    - `source`: Set the source of your application, including the GitHub repository URL, revision, and the path to the application within the repository.
    - `syncPolicy`: Configure the sync policy, including automatic syncing, pruning, and self-healing.
 
+<div align="center">
+  <img src="./public/assets/Netflix app on argocd.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Argocd Display</p>
+</div>
+
+<div align="center">
+  <img src="./public/assets/App flow on Argocd.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Netflix App on Argocd </p>
+</div>
+
 4. **Access your Application**
    - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
+
+<div align="center">
+  <img src="./public/assets/K8s App.png" alt="Logo" width="50%" height="50%">
+  <p align="center">Netflix App on Kubernetes</p>
+</div>
 
 **Phase 7: Cleanup**
 
