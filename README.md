@@ -938,7 +938,7 @@ jq tag was not found on my machine but i resolved that by installing it with hom
    - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
 
 <div align="center">
-  <img src="./public/assets/K8s App.png" alt="Logo" width="50%" height="50%">
+  <img src="./public/assets/K8s App .png" alt="Logo" width="50%" height="50%">
   <p align="center">Netflix App on Kubernetes</p>
 </div>
 
